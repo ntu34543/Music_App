@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Overpass'
   },
   artist: {
-    
+
   },
   title: {
     marginTop: 19,
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     height: 30
   },
-  timeout:{
+  timeout: {
     marginRight: 10,
     marginLeft: 90
   },
