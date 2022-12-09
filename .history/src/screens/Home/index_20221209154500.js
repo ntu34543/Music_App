@@ -32,12 +32,24 @@ const Home = () => {
               iconName = 'home';
               size = focused ? 25 : 20;
               // color = focused ? "#f0f" : "#555";
-            } else if (route.name === 'Wishlist') {
+            } else if (route.name === 'Product') {
               iconName = 'plus-square';
               size = focused ? 25 : 20;
               // color = focused ? "#f0f" : "#555";
-            } else if (route.name === 'Frofile') {
+            } else if (route.name === 'My Profile') {
               iconName = 'user';
+              size = focused ? 25 : 20;
+              // color = focused ? "#f0f" : "#555";
+            } else if (route.name === 'Notify') {
+              iconName = 'bell';
+              size = focused ? 25 : 20;
+              // color = focused ? "#f0f" : "#555";
+            } else if (route.name === 'Cart') {
+              iconName = 'cart-plus';
+              size = focused ? 25 : 20;
+              // color = focused ? "#f0f" : "#555";
+            } else if (route.name === 'Contact') {
+              iconName = 'phone';
               size = focused ? 25 : 20;
               // color = focused ? "#f0f" : "#555";
             }
