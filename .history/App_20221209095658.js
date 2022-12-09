@@ -3,7 +3,7 @@ import {ActivityIndicator, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/features/store';
-import Home from './src/screens/Home';
+import Home from './src/screens/Home/Home';
 
 const App = () => {
   return (
@@ -13,7 +13,6 @@ const App = () => {
     //   </PersistGate>
     // </Provider>
     <>
-      <Home />
     </>
   );
 };

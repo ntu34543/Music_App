@@ -7,14 +7,11 @@ import Home from './src/screens/Home';
 
 const App = () => {
   return (
-    // <Provider store={store}>
-    //   <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
-    //     <Home />
-    //   </PersistGate>
-    // </Provider>
-    <>
-      <Home />
-    </>
+    <Provider store={store}>
+      <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
+        <Home />
+      </PersistGate>
+    </Provider>
   );
 };
 
