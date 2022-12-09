@@ -8,12 +8,10 @@ import {
   View,
 } from 'react-native';
 
-function Frofile() {
+function Wishlist() {
   return (
     <SafeAreaView>
-      <View>
-        <Text>Làm vào trong đây nha</Text>
-      </View>
+      <Text>Làm vào trong đây nha</Text>
     </SafeAreaView>
   );
 }
@@ -27,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Frofile;
+export default Wishlist;

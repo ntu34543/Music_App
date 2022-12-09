@@ -40,7 +40,7 @@ const Home = () => {
               iconName = 'user';
               size = focused ? 25 : 20;
               // color = focused ? "#f0f" : "#555";
-            }
+            } 
             return <FontAwesome5 name={iconName} size={size} color={color} />;
           },
         })}

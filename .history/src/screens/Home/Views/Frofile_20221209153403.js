@@ -10,12 +10,8 @@ import {
 
 function Frofile() {
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Làm vào trong đây nha</Text>
-      </View>
-    </SafeAreaView>
-  );
+    <SafeAreaView>Làm vào trong đây nha</SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({

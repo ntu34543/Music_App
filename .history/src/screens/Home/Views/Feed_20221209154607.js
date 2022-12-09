@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 
-function Frofile() {
+function Feed() {
   return (
     <SafeAreaView>
       <View>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Frofile;
+export default Feed;
