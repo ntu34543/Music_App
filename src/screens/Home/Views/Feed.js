@@ -12,7 +12,7 @@ function Feed() {
   return (
     <SafeAreaView>
       <View>
-        <Text>Làm vào trong đây nha</Text>
+        <Text>OMG</Text>
       </View>
     </SafeAreaView>
   );
