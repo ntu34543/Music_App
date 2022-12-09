@@ -13,6 +13,7 @@ function Feed() {
     <SafeAreaView>
       <View>
         <Text>OMG</Text>
+        
       </View>
     </SafeAreaView>
   );
