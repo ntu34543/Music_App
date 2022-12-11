@@ -74,8 +74,10 @@ export default function DetailMusic({route, navigator}) {
           }}>
           <Text>Back</Text>
         </TouchableOpacity>
-        <View>
+        <View sstyle={styles.musicplayer}>
+        {/* <Image style={styles.img} source={} /> */}
           <Text>{musics.id}</Text>
+          <Text>{musics.nameSinger}</Text>
         </View>
       </View>
       <View>
