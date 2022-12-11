@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -10,18 +10,18 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {getAllMusic} from '../../../api/music';
-import {addToWishlist} from '../../../api/music';
-import {musicAction, musicSelectors} from '../../../features/music/music';
-import {getWishlist} from '../../../api/music';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllMusic } from '../../../api/music';
+import { addToWishlist } from '../../../api/music';
+import { musicAction, musicSelectors } from '../../../features/music/music';
+import { getWishlist } from '../../../api/music';
 import {
   wishlistAction,
   wishlistSelectors,
 } from '../../../features/music/wishlist';
 import DetailMusic from '../../Detail-Music/DetailMusic';
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
   const musicList = useSelector(musicSelectors.selectAll);
   // const wishlistList = useSelector(wishlistSelectors.selectAll);
   const dispatch = useDispatch();
@@ -82,20 +82,19 @@ export default function Home({navigation}) {
       {/* {isDetail === -1 ? ( */}
       <View style={styles.container}>
         <View style={styles.banner}>
-          <ImageBackground
-            source={require('../../../assets/image/sofiaAlejandra.jpg')}
+          <Image
+            source={require('../../../assets/image/Musical.jpg')}
             style={styles.image}>
-            <View style={styles.txtGroup}>
-              <Text style={styles.text}>New album</Text>
-            </View>
-          </ImageBackground>
+
+          </Image>
           <View style={styles.twoimage}>
-            <ImageBackground
-              source={require('../../../assets/image/sofiaAlejandra.jpg')}
-              style={styles.image1}></ImageBackground>
-            <ImageBackground
-              source={require('../../../assets/image/sofiaAlejandra.jpg')}
-              style={styles.image2}></ImageBackground>
+            <Image
+              source={require('../../../assets/image/headphones.webp')}
+              style={styles.image1}></Image>
+
+            <Image
+              source={require('../../../assets/image/artist.jpg')}
+              style={styles.image2}></Image>
           </View>
         </View>
         <View style={styles.allartists}>
@@ -110,14 +109,14 @@ export default function Home({navigation}) {
                   <TouchableOpacity
                     // onPress={() => moveToDetail(id)}
                     onPress={() => {
-                      navigation.navigate('DetailMusic', {musics: el})
-                      key={id}
+                      navigation.navigate('DetailMusic', { musics: el })
+                      key = { id }
                     }}
-                    android_ripple={{color: '#ffc618'}}>
+                    android_ripple={{ color: '#ffc618' }}>
                     {/* <Button title="Add" onPress={() => onAddToCart(el)} /> */}
                     <View style={styles.bgListartists}>
                       <View>
-                        <Image style={styles.img} source={{uri: el?.imgSong}} />
+                        <Image style={styles.img} source={{ uri: el?.imgSong }} />
                       </View>
                       <View>
                         <Text style={styles.playlistName}>
@@ -172,14 +171,14 @@ const styles = StyleSheet.create({
   },
   image1: {
     width: 130,
-    height: 100,
-    borderRadius: 20,
+    height: 110,
+    borderRadius: 20
   },
   image2: {
     marginTop: 15,
-    width: 130,
-    height: 110,
-    borderRadius: 20,
+    width: 150,
+    height: 100,
+    borderRadius: 6,
   },
   txtGroup: {
     position: 'absolute',

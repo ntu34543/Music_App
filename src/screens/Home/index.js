@@ -1,11 +1,6 @@
 import React, {useCallback, useEffect} from 'react';
 import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
+Image
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -58,15 +53,40 @@ const Home = () => {
         <Tab.Screen
           name="Feed"
           component={Feed}
-          // options={{ tabBarBadge: 3 }}
+          options={{
+            tabBarIcon: ({color, size}) => (
+              <Image
+                source={require('../.././assets/image/home.png')}
+                style={{width: 25, height: 26, }}
+              />
+            ),
+          headerShown: false,
+          }}
         />
         {/* options={{header: () => null}} */}
         <Tab.Screen
           name="Wishlist"
-          // options={{tabBarBadge: 8}}
           component={WishListScreen}
+          options={{
+            tabBarIcon: ({color, size}) => (
+              <Image
+                source={require('../.././assets/image/wishlists.png')}
+                style={{width: 26, height: 26, }}
+              />
+            ),
+          headerShown: false,
+          }}
         />
-        <Tab.Screen name="Frofile" component={Frofile} />
+        <Tab.Screen name="Frofile" component={Frofile}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../.././assets/image/profile.png')}
+              style={{width: 25, height: 26, }}
+            />
+          ),
+        headerShown: false,
+        }} />
         <Tab.Screen
           name="DetailMusic"
           component={DetailMusic}

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import TrackPlayer, {
   Capability,
   Event,
@@ -24,7 +24,7 @@ import Sound from 'react-native-sound';
 // https://github.com/ntu34543/music/blob/main/Luis%20Fonsi%20-%20Despacito%20ft.%20Daddy%20Yankee%20(128%20kbps).mp3?raw=true
 // https://github.com/ntu34543/music/blob/main/Maroon%205%20-%20Girls%20Like%20You%20ft.%20Cardi%20B%20(Official%20Music%20Video)%20(64%20kbps).mp3?raw=true
 
-export default function DetailMusic({route, navigator}) {
+export default function DetailMusic({ route, navigator }) {
   const [music, setMusic] = useState(null);
   const [second, setSecond] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -70,72 +70,136 @@ export default function DetailMusic({route, navigator}) {
       <View style={styles.container}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Feed', {musics: musics});
+            navigation.navigate('Feed', { musics: musics });
           }}>
-          <Text>Back</Text>
+          <Image style={styles.image} source={require('../../assets/image/back.png')} />
         </TouchableOpacity>
-        <View sstyle={styles.musicplayer}>
-        {/* <Image style={styles.img} source={} /> */}
-          <Text>{musics.id}</Text>
-          <Text>{musics.nameSinger}</Text>
+        <View style={styles.musicPlayer}>
+          <Image style={styles.img} source={{ uri: musics.imgSong }} />
+          <Text style={styles.nameSong}>{musics.nameSong}</Text>
+          <Text style={styles.nameSinger}>{musics.nameSinger}</Text>
         </View>
       </View>
-      <View>
-        <Button
-          title="Play"
-          onPress={() => {
-            play();
-          }}
-        />
-        <Button
-          title="Pause"
-          onPress={() => {
-            music.pause();
-          }}
-        />
+      <View style={styles.buttonPlay}>
 
-        <Button
-          title="Continue"
-          onPress={() => {
-            music.play();
-          }}
-        />
 
-        <Button
-          title="Stop"
-          onPress={() => {
-            music.stop();
-          }}
-        />
-
-        <Button
-          title="+"
-          onPress={() => {
-            setVolume('+');
-          }}
-        />
-
-        <Button
+        <TouchableOpacity
           title="-"
           onPress={() => {
             setVolume('-');
-          }}
-        />
+          }}>
+          <Image
+            source={require('../.././assets/image/down.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
 
-        <Button
+        <TouchableOpacity
           title="Increase Time"
           onPress={() => {
             music.setCurrentTime(100);
           }}
-        />
+        >
+          <Image
+            source={require('../.././assets/image/why.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          styles={styles.buttonPlay1}
+          title=""
+          onPress={() => {
+            play();
+          }}>
+          <Image
+            source={require('../.././assets/image/play.png')}
+            style={{ width: 28, height: 28, }}
+          />
 
-        <Button
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="Increase Time"
+          onPress={() => {
+            music.setCurrentTime(100);
+          }}
+        >
+          <Image
+            source={require('../.././assets/image/increase.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="+"
+          onPress={() => {
+            setVolume('+');
+
+          }}>
+          <Image
+            source={require('../.././assets/image/plus.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+
+      </View>
+      <View style={styles.buttonPlay2}>
+
+
+        <TouchableOpacity
+          title="Pause"
+          onPress={() => {
+            music.pause();
+          }}
+        >
+          <Image
+            source={require('../.././assets/image/pause.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="Continue"
+          onPress={() => {
+            music.play();
+          }}
+        >
+          <Image
+            source={require('../.././assets/image/continues.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="Stop"
+          onPress={() => {
+            music.stop();
+          }}
+        >
+          <Image
+            source={require('../.././assets/image/stop.png')}
+            style={{ width: 25, height: 25, }}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity
           title="isPlaying"
           onPress={() => {
             console.log(music.isPlaying());
           }}
-        />
-
+        >
+          <Image
+            source={require('../.././assets/image/heart.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          title="isPlaying"
+          onPress={() => {
+            console.log(music.isPlaying());
+          }}
+        >
+          <Image
+            source={require('../.././assets/image/heart.png')}
+            style={{ width: 20, height: 15, }}
+          />
+        </TouchableOpacity>
         <Text>
           {second} / Total Second {duration}
         </Text>
@@ -144,4 +208,57 @@ export default function DetailMusic({route, navigator}) {
   );
 }
 // Satoshi
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  musicPlayer: {
+    marginHorizontal: 18,
+  },
+  img: {
+    width: '100%',
+    height: 350,
+    borderRadius: 20,
+    justifyContent: 'center',
+  },
+  nameSong: {
+    fontSize: 20,
+    color: 'black',
+    fontWeight: '600',
+
+  },
+  nameSinger: {
+    marginTop: 2,
+    marginBottom: 16,
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  image: {
+    margin:10,
+    width: 20,
+    height: 18,
+  },
+  buttonPlay: {
+    width: 50,
+    height: 30,
+    marginHorizontal: 90,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    flexDirection: 'row',
+    paddingVertical: 20,
+
+  },
+  buttonPlay1: {
+    height: 50,
+  },
+  buttonPlay2: {
+    width: 50,
+    height: 30,
+    marginHorizontal: 90,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    flexDirection: 'row',
+    paddingVertical: 20,
+  }
+});
