@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -73,7 +73,7 @@ export default function Profile() {
             numColumns={1}
             data={playlist}
             keyExtractor={item => item.name}
-            renderItem={({item}) => {
+            renderItem={({ item }) => {
               return (
                 <View style={styles.bgListartists}>
                   <View>
